@@ -1,5 +1,5 @@
-const prev = document.querySelector("#prev");
-const next = document.querySelector("#next");
+const prev = document.querySelector("#prev1");
+const next = document.querySelector("#next1");
 
 let carouselVp = document.querySelector("#carousel-vp");
 

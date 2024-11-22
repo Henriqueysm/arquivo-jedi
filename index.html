@@ -11,30 +11,34 @@
 
 
 <body>
-  <header id="menu">
+    <header id="menu">
+        <a href="index.html" class="logo">
+          <img src="simbolos/png storm (2).png" alt="Logo">
+        </a>
+        <button class="botão-toggle" id="menu-toggle" aria-label="Abrir Menu">
+          ☰
+        </button>
+        <nav id="nav-menu" class="hidden">
+          <a href="#curiosidades">CURIOSIDADES</a>
+          <a href="#saga">SAGA</a>
+          <a href="#cronologia">CRONOLOGIA</a>
+          <a href="#personagens">PERSONAGENS</a>
+          <a href="#sabres">SABRES</a>
+          <a href="#simbolos">SÍMBOLOS</a>
+        </nav>
 
-    <a href="index.html" class="logo"> <img src="simbolos/png storm (2).png"> </a>  
-
-  
-    <nav>   
-        <a href="#curiosidades"> CURIOSIDADES </a> 
-      
-        <a href="#saga"> SAGA </a> 
-    
-        <a href="#cronologia"> CRONOLOGIA </a>
-    
-        <a href="#personagens"> PERSONAGENS </a>         
-        
-        <a href="#sabres"> SABRES </a> 
-    
-        <a href="#simbolos"> SÍMBOLOS </a> 
-
-    </nav>
+        <script>
+            document.getElementById("menu-toggle").addEventListener("click", function () {
+  const navMenu = document.getElementById("nav-menu");
+  navMenu.classList.toggle("show");
+});
+        </script>
 </header>
 
 <!-- Conteúdo principal -->
 <main>
-    <audio id="introAudio" src="/efeitos/intro.mp3"></audio>
+    <button onclick="playAudio()">Iniciar áudio</button>
+    <audio id="introAudio" src="/efeitos/intro.mp3" autoplay></audio>
 
     <section>
       <div class="star-wars-intro">
@@ -46,15 +50,28 @@
       </div>
     </section>
   
-    <script>
-      // Reproduzir o áudio ao carregar a página
-      window.onload = () => {
-        const audio = document.getElementById("introAudio");
-        audio.play().catch(error => {
-          console.error("Erro ao reproduzir o áudio:", error);
-        });
-      };
-    </script>
+
+
+
+<script>
+  function playAudio() {
+    const audio = document.getElementById("introAudio");
+    audio.play().catch(error => {
+      console.error("Erro ao reproduzir o áudio:", error);
+    });
+  }
+</script>
+
+<script>
+    window.onload = () => {
+      const audio = document.getElementById("introAudio");
+      audio.muted = false; // Desativa o mute após o carregamento
+      audio.play().catch(error => {
+        console.error("Erro ao reproduzir o áudio:", error);
+      });
+    };
+  </script>
+  
 </main>
 
 
@@ -298,8 +315,8 @@
 
 
     <div id="cCarousel">
-        <div class="arrow" id="prev">&#10094;</div>
-        <div class="arrow" id="next">&#10095;</div>
+        <div class="arrow" id="prev1">&#10094;</div>
+        <div class="arrow" id="next1">&#10095;</div>
   
       <div id="carousel-vp">
         <div id="cCarousel-inner">
@@ -488,11 +505,12 @@
 
   <section id="personagens">
     <h2>Personagens</h2>
-
     <table border="0">
         <tr>
             <td>
-                <div class="card">
+                
+<div class="cards-container">
+    <div class="card">
                     <div class="card-inner">
                         <div class="card-front">
                             <img src="personagens/anakin.jpg" alt="Anakin Skywalker">
@@ -502,10 +520,11 @@
                             <p class="card__description">Um Jedi prodígio com nome de Anakin Skywalker que caiu para o Lado Sombrio e se tornou Darth Vader.</p>
                         </div>
                     </div>
-                </div>
+                </div></div>
             </td>
             <td>
-                <div class="card">
+<div class="cards-container">
+    <div class="card">
                     <div class="card-inner">
                         <div class="card-front">
                             <img src="personagens/palpatine.jpg" alt="Palpatine">
@@ -515,10 +534,11 @@
                             <p class="card__description">O manipulador mestre Sith, conhecido como o Imperador da galáxia.</p>
                         </div>
                     </div>
-                </div>
+                </div></div>
             </td>
             <td>
-                <div class="card">
+<div class="cards-container">
+    <div class="card">
                     <div class="card-inner">
                         <div class="card-front">
                             <img src="personagens/kilo.jpg" alt="Kylo Ren">
@@ -528,10 +548,11 @@
                             <p class="card__description"> Filho de Leia e Han Solo, dividido entre a Luz e a Escuridão.</p>
                         </div>
                     </div>
-                </div>
+                </div></div>
             </td>
             <td>
-                <div class="card">
+<div class="cards-container">
+    <div class="card">
                     <div class="card-inner">
                         <div class="card-front">
                             <img src="personagens/stormtrooper.jpg" alt="Stormtrooper">
@@ -541,10 +562,11 @@
                             <p class="card__description">Os soldados do Império, conhecidos por sua armadura branca e precisão questionável.</p>
                         </div>
                     </div>
-                </div>
+                </div></div>
             </td>
             <td>
-                <div class="card">
+<div class="cards-container">
+    <div class="card">
                     <div class="card-inner">
                         <div class="card-front">
                             <img src="personagens/boba.jpg" alt="Boba Fett">
@@ -554,12 +576,13 @@
                             <p class="card__description">Um famoso caçador de recompensas, conhecido por sua armadura icônica e habilidade mortal.</p>
                         </div>
                     </div>
-                </div>
+                </div></div>
             </td>
         </tr>
         <tr>
             <td>
-                <div class="card">
+<div class="cards-container">
+    <div class="card">
                     <div class="card-inner">
                         <div class="card-front">
                             <img src="personagens/yoda.jpg" alt="Yoda">
@@ -569,10 +592,11 @@
                             <p class="card__description">Um dos Jedi mais poderosos e sábios, conhecido por seu treinamento e filosofia.</p>
                         </div>
                     </div>
-                </div>
+                </div></div>
             </td>
             <td>
-                <div class="card">
+<div class="cards-container">
+    <div class="card">
                     <div class="card-inner">
                         <div class="card-front">
                             <img src="personagens/obiwan.jpg" alt="Obi-Wan Kenobi">
@@ -582,10 +606,11 @@
                             <p class="card__description">Um mestre Jedi e mentor de Anakin Skywalker e Luke Skywalker.</p>
                         </div>
                     </div>
-                </div>
+                </div></div>
             </td>
             <td>
-                <div class="card">
+<div class="cards-container">
+    <div class="card">
                     <div class="card-inner">
                         <div class="card-front">
                             <img src="personagens/luke.jpg" alt="Luke Skywalker">
@@ -595,10 +620,11 @@
                             <p class="card__description">O último Jedi, conhecido por sua luta contra o Império e a redenção de seu pai.</p>
                         </div>
                     </div>
-                </div>
+                </div></div>
             </td>
             <td>
-                <div class="card">
+<div class="cards-container">
+    <div class="card">
                     <div class="card-inner">
                         <div class="card-front">
                             <img src="personagens/ahsoka.jpg" alt="Ahsoka Tano">
@@ -608,10 +634,11 @@
                             <p class="card__description">Uma ex-Padawan de Anakin Skywalker, conhecida por sua habilidade e coragem.</p>
                         </div>
                     </div>
-                </div>
+                </div></div>
             </td>
             <td>
-                <div class="card">
+<div class="cards-container">
+    <div class="card">
                     <div class="card-inner">
                         <div class="card-front">
                             <img src="personagens/rey.jpg" alt="Rey">
@@ -621,15 +648,16 @@
                             <p class="card__description">Uma jovem mulher que descobre suas habilidades como Jedi e seu papel na luta contra a Primeira Ordem.</p>
                         </div>
                     </div>
-                </div>
+                </div></div>
             </td>
         </tr>
       </tr>
 
 
       <tr>
-        <td>
-          <div class="card">
+            <td>
+<div class="cards-container">
+    <div class="card">
               <div class="card-inner">
                 <div class="card-front">
                   <img src="personagens/padme.jpg">
@@ -644,7 +672,8 @@
       </td>
       
           <td>
-                         <div class="card">
+         <div class="cards-container">
+    <div class="card">
               <div class="card-inner">
                 <div class="card-front">
                   <img src="personagens/leia.jpg">
@@ -656,8 +685,9 @@
               </div>
             </div>
           </td>
-          <td>
-      <div class="card">
+            <td>
+<div class="cards-container">
+    <div class="card">
               <div class="card-inner">
                 <div class="card-front">
                   <img src="personagens/hansolo.jpg">
@@ -669,8 +699,9 @@
               </div>
             </div>
           </td>
-          <td>                               
-      <div class="card">
+            <td>
+<div class="cards-container">
+    <div class="card">
               <div class="card-inner">
                 <div class="card-front">
                   <img src="personagens/chewie.jpg">
@@ -682,8 +713,9 @@
               </div>
             </div>
           </td>
-      <td>
-                                 <div class="card">
+                 <td>
+<div class="cards-container">
+    <div class="card">
               <div class="card-inner">
                 <div class="card-front">
                   <img src="personagens/fin.jpg">
@@ -699,8 +731,9 @@
       
       
       <tr>
-        <td>
-          <div class="card">
+            <td>
+<div class="cards-container">
+    <div class="card">
       <div class="card-inner">
       <div class="card-front">
       <img src="personagens/c3po.jpg">
@@ -713,8 +746,9 @@
       </div>
       </td>
       
-      <td>
-      <div class="card">
+              <td>
+<div class="cards-container">
+    <div class="card">
       <div class="card-inner">
       <div class="card-front">
       <img src="personagens/r2d2.jpg">
@@ -727,8 +761,9 @@
       </div>
       </td>
       
-      <td>
-              <div class="card">
+                 <td>
+<div class="cards-container">
+    <div class="card">
       <div class="card-inner">
       <div class="card-front">
       <img src="personagens/bb8.jpg">
@@ -740,8 +775,9 @@
       </div>
       </div>
       </td>
-      <td>
-        <div class="card">
+                  <td>
+<div class="cards-container">
+    <div class="card">
       <div class="card-inner">
       <div class="card-front">
       <img src="personagens/grogu.jpg">
@@ -756,8 +792,9 @@
       
       
       
-      <td>
-            <div class="card">
+                  <td>
+<div class="cards-container">
+    <div class="card">
       <div class="card-inner">
       <div class="card-front">
       <img src="personagens/mando.jpg">
@@ -774,7 +811,7 @@
       
       
      </table>
-         
+
 </section>
     
 

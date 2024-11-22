@@ -62,18 +62,15 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  color: #ffffff;
+  padding: 10px 20px;
   background-color: black;
-  position: fixed; /* Fixar o elemento no topo */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: scroll; /* Não é necessário com fixed */
-  width: 100%; /* Ocupa toda a largura da página */
-  z-index: 1000; /* Garante que fique acima de outros elementos */
-
-
+  color: #ffffff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
+
 header nav .h1 {
   font-family: 'starwarsvazado';
   color: #ffe81f;
@@ -109,10 +106,40 @@ header nav a:hover {
 
 
 .logo img {
-padding-left: 50%;
-width: 60px;
-height: 60px;
+  width: 50px;
+  height: 50px;
 }
+
+#menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: #ffe81f;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
+nav {
+  display: flex;
+  gap: 20px;
+  padding-left: 5%;
+}
+
+nav a {
+  color: #ffe81f;
+  font-family: 'varino';
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+nav a:hover {
+  color: red;
+  text-shadow: 0px 0px 8px red;
+}
+
 
 /* Efeito Holograma nos Botões */
 header nav a::after {
@@ -328,22 +355,18 @@ padding-top: 5%;
 }
 
 
-
-
-
 .prev, .next {
   position: absolute;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.418);
   color: #fff;
   border: none;
   font-size: 1em;
-  padding: 0px;
+  padding: 10px;
   cursor: pointer;
   border-radius: 0%;
   z-index: 10;
-  top: 10%;
-
+  top: 40%;
 }
 
 .prev {
@@ -450,9 +473,9 @@ p{
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-
 }
+
+
 
 #franquia2 .texto-franquia{
   display: flex;
@@ -651,11 +674,11 @@ transform: translateY(-50%);
 transition: color 0.3s ease;
 }
 
-#prev {
+#prev1 {
 left: 10px;
 }
 
-#next {
+#next1 {
 right: 10px;
 }
 
@@ -724,15 +747,15 @@ cursor: pointer;
 
 }
 
-#cCarousel #prev {
+#cCarousel #prev1 {
 left: 70px;
 }
 
-#cCarousel #next {
+#cCarousel #next1 {
 right: -310px;
 }
 
-.prev, .next {
+.prev1, .next1 {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -746,7 +769,7 @@ right: -310px;
   z-index: 10;
 }
 
-#prev:hover, #next:hover {
+#prev1:hover, #next1:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -896,10 +919,11 @@ text-align: center;
 margin-bottom: 1em;
 }
 
+
 /* Estilos da tabela */
 table {
 width: 80%;
-border-collapse: collapse; /
+border-collapse: collapse; 
 padding: 0% auto;
 margin: 0% auto;
 }
@@ -910,11 +934,24 @@ vertical-align: top;
 
 }
 
+
+/* Cards Container */
+#personagens .cards-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 colunas por padrão */
+  gap: 15px; /* Espaçamento entre os cards */
+  margin: 0 auto;
+  padding: 0 1em;
+  width: 100%;
+  max-width: 1200px;
+}
+
 /* Estilos do cartão */
 .card {
 perspective: 1000px; 
 position: relative;
-width: 200px; /* Largura fixa para os cartões */
+width: 500%; /* Adapta à largura do grid */
+max-width: 200px; /* Limita a largura máxima */
 margin: 0 auto; /* Centraliza o cartão */
 }
 
@@ -1083,7 +1120,9 @@ margin: 7px 170px;
 border: 1px solid #ccc;
 background-color: #252524;
 color: white;
-width: 80%;
+width: 60%;
+text-align: center;
+margin: 0% auto;
 }
 
 
@@ -1094,6 +1133,8 @@ margin: 5px 0;
 background-color: #ccc;
 border-color: #252524;
 color: #000;
+margin: 0% auto;
+
 
 }
 
@@ -1623,15 +1664,7 @@ color: red;
 
 
 
-/* Estilos para notebooks */
-
-@media (min-width: 1900px) {
-  .prev, .next {
-    position: absolute;
-    top: 40%;
-  }
-}
-
+/* Estilos para tvs */
 
 /* Estilos para notebooks */
 @media (max-width: 1366px) {
@@ -1660,7 +1693,7 @@ color: red;
 
 .prev, .next {
   position: absolute;
-  top: 50%;
+  top: 40%;
 }
 
 
@@ -1714,15 +1747,44 @@ color: red;
 }
 
 
-#cCarousel #prev {
+#cCarousel #prev1 {
   left: 60px;
 }
 
-#cCarousel #next {
+#cCarousel #next1 {
   right: -207px;
 }
 
+/* Estilos da tabela */
+table {
+width: 80%;
+border-collapse: collapse; /
+}
 
+td {
+padding: 15px; 
+vertical-align: top;  
+
+}
+
+
+/* Cards Container */
+#personagens .cards-container {
+  display: grid; /* Usa grid layout */
+  gap: 15%; /* Espaçamento entre os cards */
+  margin: 0 auto;
+  padding: 0%;
+  width: 100%; /* Preenche a largura total */
+  max-width: 500px; /* Limita a largura em telas grandes */
+}
+
+.card {
+  perspective: 1000px; 
+  position: relative;
+  width: 200px; /* Adapta à largura do grid */
+  max-width: 200px; /* Limita a largura máxima */
+  margin: 0 auto; /* Centraliza o cartão */
+  }
 
 #sabres {
   height: 95vh;
@@ -1748,63 +1810,363 @@ footer{
 padding-top: 1%;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Responsividade */
-@media (max-width: 768px) {
-  #personagens h2 {
-      font-size: 2em; /* Reduz o tamanho do título */
-  }
-  
-  .card {
-      width: 100%; /* Largura total em telas pequenas */
-      margin-bottom: 1em; /* Espaçamento entre os cartões */
-  }
-  }
-
 }
 
-@media (max-width: 770px) {
-  #carousel-vp {
-    width: 510px;
-  }
-  }
-  
-  @media (max-width: 510px) {
-  #carousel-vp {
-    width: 250px;
-  }
+
+
+
+
+/* Responsividade para celulares */
+@media (max-width: 768px) {
+  #menu-toggle {
+    display:flex;
   }
 
-  /* Responsividade para telas menores */
-@media (max-width: 768px) {
-  .cronologia h2 {
-      font-size: 1.5em;
+  .botão-toggle{
+    padding-right: 10%;
+  }
+
+  #nav-menu {
+    display: none;
+    flex-direction: column;
+
+    background-color: black;
+    position: absolute;
+    top: 60px;
+    right: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  #nav-menu a {
+    padding: 0px 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  #nav-menu.show {
+    display: flex;
+  }
+
+
+  main {
+    background-position: right;
+}
+
+.crawl {
+display: none;
+  }
+
+
+  .carousel-item img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+  }
+
+
+
+
+  .caption {
+    bottom: 23%;
+    font-size: 0.9rem;
+    height: 20vh;
+    line-height: 1.7;
+    min-height: 10px; /* Altura fixa */
+
   }
   
-  #cCarousel {
-      max-width: 100%;
+.prev, .next {
+  top: 30%;
+  width: 10%;
+}
+
+  .prev {
+    left: 10px;
   }
   
-  .cCarousel-item {
-      min-width: 150px;
+  .next {
+    right: 10px;
   }
   
-  .fontecronolog {
-      font-size: 0.9em;
+  #saga {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    padding: 10px 40px 20px; /* distancia do topo x largura x baixo */
+    color: #f1f1f1;
+    height: 210vh;
+    margin-top: 0px;
+    color: #ffffff;
+    background-color: #000;
+    background-image: url(Wallpapper/2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    gap: 20px; /* Espaçamento entre os cards */
+    
+    }
+    
+    #saga .texto-franquia{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: center;
+    margin-top: 20px;
+    
+    }
+
+
+  #franquia2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    padding: 10px 40px 20px; /* distancia do topo x largura x baixo */
+    color: #f1f1f1;
+    height: 200vh;
+    margin-top: 0px;
+    color: #ffffff;
+    background-color: #000;
+    background-image: url(Wallpapper/2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    gap: 20px; /* Espaçamento entre os cards */
   }
+  
+  #franquia2 .card {
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 0%; /* Largura dos cards */
+    max-width: 50px; /* Largura máxima */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra */
   }
+
+  .secao4-div-card { 
+    display: flex;
+    flex-direction: column; /* Mantém o conteúdo interno do card alinhado */
+    align-items: center;
+    width: 60%; /* Faz o card ocupar quase toda a largura do contêiner */
+    max-width: 400px; /* Largura máxima para não ficar muito grande */
+    margin: 10px 0; /* Espaçamento vertical entre os cards */
+    padding: 10px;
+    box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    background-color: white;
+    transition: all 0.5s ease;
+  }
+
+
+  #franquia3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    padding: 10px 40px 20px; /* distancia do topo x largura x baixo */
+    color: #f1f1f1;
+    height: 200vh;
+    margin-top: 0px;
+    color: #ffffff;
+    background-color: #000;
+    background-image: url(Wallpapper/2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    gap: 20px; /* Espaçamento entre os cards */
+  }
+  
+  #franquia3 .card {
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 0%; /* Largura dos cards */
+    max-width: 50px; /* Largura máxima */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra */
+  }
+
+
+
+  #franquia4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    padding: 10px 40px 20px; /* distancia do topo x largura x baixo */
+    color: #f1f1f1;
+    height: 150vh;
+    margin-top: 0px;
+    color: #ffffff;
+    background-color: #000;
+    background-image: url(Wallpapper/2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    gap: 20px; /* Espaçamento entre os cards */
+  }
+  
+  #franquia4 .card {
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 0%; /* Largura dos cards */
+    max-width: 50px; /* Largura máxima */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra */
+  }
+
+
+  .secao5-div-card { 
+    display: flex;
+    flex-direction: column; /* Mantém o conteúdo interno do card alinhado */
+    align-items: center;
+    width: 60%; /* Faz o card ocupar quase toda a largura do contêiner */
+    max-width: 400px; /* Largura máxima para não ficar muito grande */
+    margin: 10px 0; /* Espaçamento vertical entre os cards */
+    padding: 10px;
+    box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    background-color: white;
+    transition: all 0.5s ease;
+  }
+
+
+
+
+
+
+  .cronologia {
+    line-height: 5px;
+    background-color: #1c1c1c; /* Fundo escuro */
+    color: #ffffff; /* Texto branco */
+    text-align: center;
+    height: 95vh;
+    }
+
+    .cronologia h2 {
+    line-height: 35px;
+      }
+
+ #cCarousel {
+    position: relative;
+    max-width: 210px;
+    padding-left: 22%;
+  }
+
+  .arrow {
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+    font-size: 2em;
+    color: #f0f0f0;
+    transform: translateY(-50%);
+    transition: color 0.3s ease;
+    }
+
+  #prev1 {
+    left: 20px;
+    }
+    
+    #next1 {
+      left: 380px;
+    }
+
+    .prev1, .next1 {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.418);
+      color: #fff;
+      border: none;
+      font-size: 1em;
+      padding-left: 0px;
+      cursor: pointer;
+      border-radius: 0%;
+      z-index: 10;
+}
+
+
+
+
+table {
+  width: 10%;
+  border-collapse: collapse;
+  padding: 0% 0%;
+  margin: 0% 0%;
+  }
+
+  td {
+    padding: 2px; 
+    vertical-align: top;  
+    
+  }
+
+
+
+#personagens .cards-container {
+   grid-template-columns: repeat(2, 1fr); /* 2 colunas por linha */
+}
+
+
+/* Estilos do cartão */
+.card {
+  perspective: 1000px; 
+  position: relative;
+  width: 100px; /* Adapta à largura do grid */
+  max-width: 200px; /* Limita a largura máxima */
+  margin: 0 auto; /* Centraliza o cartão */
+}
+
+
+
+
+  .sabres-container {
+    gap: 60px;
+    }
+
+.tooltip {
+  position: fixed; /* Posição fixa em relação à janela */
+  top: 70%; /* Alinhado ao centro verticalmente */
+  left: 50%; /* Alinhado ao centro horizontalmente */
+  transform: translate(-50%, -50%); /* Centraliza exatamente no meio */
+  width: 500px; /* Ajusta a largura para caber melhor na tela */
+  font-size: 14px; /* Reduz o tamanho da fonte */
+  z-index: 1000; /* Garante que apareça acima de outros elementos */
+  height: 10vh;
+}
+
+
+
+/* Tooltip */
+.tooltip1 {
+  position:fixed;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #c0bfbf;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 20px;
+  pointer-events: none;
+  line-height: 10px;
+  white-space: normal;
+  width: 100%;
+  line-height: 50px;
+  }
+
+  #simbolos .era {
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    margin: 7%; /* Espaçamento entre as divs */
+    padding-left: 1%;
+    
+    }
+
+}
