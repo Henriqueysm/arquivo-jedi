@@ -27,7 +27,7 @@ margin: 0;
 
 h1{
   font-family: 'starwars';
-  font-size: 80px;
+  font-size: 100px;
   text-align: center;
   line-height: 20px;
 }
@@ -54,6 +54,7 @@ h3{
 
 body {
   font-family: Arial, sans-serif;
+  overflow-x: hidden;
 
 }
 
@@ -106,8 +107,9 @@ header nav a:hover {
 
 
 .logo img {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
+  padding-left: 100%;
 }
 
 #menu-toggle {
@@ -124,8 +126,8 @@ header nav a:hover {
 
 nav {
   display: flex;
-  gap: 20px;
-  padding-left: 5%;
+  gap: 0px;
+  padding-left: 0%;
 }
 
 nav a {
@@ -133,6 +135,8 @@ nav a {
   font-family: 'varino';
   text-decoration: none;
   font-size: 0.9rem;
+  text-align: center;
+  padding-left: 6%;
 }
 
 nav a:hover {
@@ -585,7 +589,7 @@ section div .imagesize {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: calc(65% / 2 - 30px);
+  width: calc(100% / 2,5 - 40px);
   margin: 10px;
   padding: 10px;
   box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.1);
@@ -618,7 +622,7 @@ section div .imagesize {
 /* CRONOLOGIA DE STAR WARS*/
 /* Estrutura geral da seção */
 .cronologia {
-padding: 2em;
+padding: 1em;
 background-color: #1c1c1c; /* Fundo escuro */
 color: #ffffff; /* Texto branco */
 text-align: center;
@@ -731,43 +735,27 @@ padding-left: 6%;
 
 }
 
-#cCarousel .arrow {
-position: absolute;
-top: 50%;
-display: flex;
-width: 25px;
-height: 45px;
-justify-content: center;
-align-items: center;
-z-index: 1;
-font-size: 26px;
-color: white;
-background: #00000072;
-cursor: pointer;
-
-}
-
-#cCarousel #prev1 {
-left: 70px;
-}
-
-#cCarousel #next1 {
-right: -310px;
-}
-
-.prev1, .next1 {
+#arrow {
   position: absolute;
-  top: 50%;
   transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.418);
   color: #fff;
   border: none;
   font-size: 1em;
-  padding: 10px;
   cursor: pointer;
   border-radius: 0%;
   z-index: 10;
+  top: 50%;
 }
+.prev1{
+left: 5%;
+}
+
+.next1{
+right: -19%;
+}
+
+
 
 #prev1:hover, #next1:hover {
   background-color: rgba(0, 0, 0, 0.8);
@@ -1401,7 +1389,7 @@ font-family: inherit;
 gap: 10px;
 padding-inline: 2em;
 padding-bottom: 0.4em;
-  background-image: linear-gradient( to top, rgb(0, 0, 0), rgb(31, 32, 31));
+background-image: linear-gradient( to top, rgb(0, 0, 0), rgb(31, 32, 31));
 border-radius: 20px;
 }
 
@@ -1664,10 +1652,24 @@ color: red;
 
 
 
-/* Estilos para tvs */
 
 /* Estilos para notebooks */
-@media (max-width: 1366px) {
+@media (max-width: 1600px) {
+
+  
+
+.logo img{
+  padding-left: 5%;
+}
+
+  nav a {
+    color: #ffe81f;
+    font-family: 'varino';
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-align: center;
+    padding-left: 2%;
+  }
 
   #curiosidades{
     height: 80vh;
@@ -1683,7 +1685,7 @@ color: red;
 }
 
 .caption {
-    bottom: 12%;
+    bottom: 10%;
 
 }
 
@@ -1726,7 +1728,7 @@ color: red;
 }
 
 .secao5-div-card {
-    width: calc(20% / 1 - 10px);
+    width: calc(18% / 1 - 10px);
 }
 
 
@@ -1746,13 +1748,24 @@ color: red;
   padding-left: 7%;
 }
 
-
-#cCarousel #prev1 {
-  left: 60px;
+#arrow {
+  position: absolute;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.418);
+  color: #fff;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 0%;
+  z-index: 10;
+  top: 50%;
+}
+.prev1{
+left: 4%;
 }
 
-#cCarousel #next1 {
-  right: -207px;
+.next1{
+left: 120%;
 }
 
 /* Estilos da tabela */
@@ -1787,7 +1800,7 @@ vertical-align: top;
   }
 
 #sabres {
-  height: 95vh;
+  height: 100vh;
   overflow: hidden;
 
 }
@@ -1802,7 +1815,7 @@ vertical-align: top;
 }
 
 #contato {
-  height: 80vh;
+  height: 90vh;
 }
 
 
@@ -1818,6 +1831,12 @@ padding-top: 1%;
 
 /* Responsividade para celulares */
 @media (max-width: 768px) {
+
+  body{
+    overflow-x: hidden;
+    margin: 0;
+  }
+
   #menu-toggle {
     display:flex;
   }
@@ -1883,14 +1902,15 @@ display: none;
 }
 
   .prev {
-    left: 10px;
+    left: 0px;
   }
   
   .next {
-    right: 10px;
+    right: 0px;
   }
   
   #saga {
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1908,6 +1928,20 @@ display: none;
     gap: 20px; /* Espaçamento entre os cards */
     
     }
+
+
+    h3>ul{
+      font-size: 24px;
+    }
+
+    li{
+      font-size: 20px;
+    }
+
+    p{
+      font-size: 15px;
+    }
+
     
     #saga .texto-franquia{
     display: flex;
@@ -2009,34 +2043,15 @@ display: none;
     background-repeat: no-repeat;
     gap: 20px; /* Espaçamento entre os cards */
   }
+
+
+  .secao4-div-card {
+    width: calc(100% / 1 - 80px);
+  }
   
-  #franquia4 .card {
-    background-color: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
-    color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 0%; /* Largura dos cards */
-    max-width: 50px; /* Largura máxima */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra */
+  .secao5-div-card {
+    width: calc(86% / 1 - 40px);
   }
-
-
-  .secao5-div-card { 
-    display: flex;
-    flex-direction: column; /* Mantém o conteúdo interno do card alinhado */
-    align-items: center;
-    width: 60%; /* Faz o card ocupar quase toda a largura do contêiner */
-    max-width: 400px; /* Largura máxima para não ficar muito grande */
-    margin: 10px 0; /* Espaçamento vertical entre os cards */
-    padding: 10px;
-    box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.1);
-    border-radius: 15px;
-    background-color: white;
-    transition: all 0.5s ease;
-  }
-
-
-
 
 
 
@@ -2045,56 +2060,65 @@ display: none;
     background-color: #1c1c1c; /* Fundo escuro */
     color: #ffffff; /* Texto branco */
     text-align: center;
-    height: 95vh;
+    height: 110vh;
+    width: 100%;
     }
 
     .cronologia h2 {
-    line-height: 35px;
+    line-height: 45px;
       }
 
- #cCarousel {
-    position: relative;
-    max-width: 210px;
-    padding-left: 22%;
+
+  .cCarousel{
+    max-width: 80px;
+    margin: 0 0; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    
   }
 
-  .arrow {
-    cursor: pointer;
-    position: fixed;
-    top: 50%;
-    font-size: 2em;
-    color: #f0f0f0;
-    transform: translateY(-50%);
-    transition: color 0.3s ease;
-    }
+  #cCarousel {
+    max-width: 260px;
+    justify-content: center; 
+    align-items: center;
+    margin: 0;
+  }
+  
 
-  #prev1 {
-    left: 20px;
-    }
-    
-    #next1 {
-      left: 380px;
-    }
-
-    .prev1, .next1 {
+    #arrow {
       position: absolute;
-      top: 50%;
       transform: translateY(-50%);
       background-color: rgba(0, 0, 0, 0.418);
       color: #fff;
       border: none;
       font-size: 1em;
-      padding-left: 0px;
       cursor: pointer;
       border-radius: 0%;
       z-index: 10;
+      top: 50%;
+}
+.prev1{
+  left: 0%;
+}
+
+.next1{
+  left: 125%;
+}
+
+h4{
+  line-height: 15px;
 }
 
 
-
+#personagens{
+  width: 100%;
+  margin: -7%;
+  overflow-x: hidden;
+}
 
 table {
-  width: 10%;
+  width: 5%;
   border-collapse: collapse;
   padding: 0% 0%;
   margin: 0% 0%;
@@ -2109,32 +2133,37 @@ table {
 
 
 #personagens .cards-container {
-   grid-template-columns: repeat(2, 1fr); /* 2 colunas por linha */
+   grid-template-columns: repeat(5, 1fr); /* 5 colunas por linha */
 }
 
+.botao-quizz1{
+padding: 10%;
+}
 
 /* Estilos do cartão */
 .card {
-  perspective: 1000px; 
   position: relative;
-  width: 100px; /* Adapta à largura do grid */
+  width: 78px; /* Adapta à largura do grid */
   max-width: 200px; /* Limita a largura máxima */
   margin: 0 auto; /* Centraliza o cartão */
 }
 
 
-
+#sabres{
+  height: 70vh;
+}
 
   .sabres-container {
-    gap: 60px;
+    overflow-x: hidden;
+    gap: 40px;
     }
 
 .tooltip {
   position: fixed; /* Posição fixa em relação à janela */
-  top: 70%; /* Alinhado ao centro verticalmente */
+  top: 60%; /* Alinhado ao centro verticalmente */
   left: 50%; /* Alinhado ao centro horizontalmente */
   transform: translate(-50%, -50%); /* Centraliza exatamente no meio */
-  width: 500px; /* Ajusta a largura para caber melhor na tela */
+  width: 90%; /* Ajusta a largura para caber melhor na tela */
   font-size: 14px; /* Reduz o tamanho da fonte */
   z-index: 1000; /* Garante que apareça acima de outros elementos */
   height: 10vh;
@@ -2142,23 +2171,7 @@ table {
 
 
 
-/* Tooltip */
-.tooltip1 {
-  position:fixed;
-  top: 70%;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #c0bfbf;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 20px;
-  pointer-events: none;
-  line-height: 10px;
-  white-space: normal;
-  width: 100%;
-  line-height: 50px;
-  }
+
 
   #simbolos .era {
     text-align: center;
@@ -2168,5 +2181,61 @@ table {
     padding-left: 1%;
     
     }
+
+/* Tooltip */
+  .tooltip1 {
+    overflow-x: hidden;
+    position:fixed;
+    width: 90%;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #c0bfbf;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    text-align: center;
+    white-space: wrap;
+        opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    line-height: 20px;
+    
+    }
+
+
+
+    #contato {
+      background-image: url(Wallpapper/2.png); 
+      padding: 20px;
+      text-align: center;
+      height: 70vh;
+    }
+    
+    h2 {
+    margin-bottom: 30px;
+    }
+    
+    .contato-conteudo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 5px;
+    padding-bottom: 10%;
+    }
+
+
+    
+    /* Estilo para as Redes Sociais */
+    .redes {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: flex-start;
+    margin-left: 10%;
+    }
+
+    
 
 }

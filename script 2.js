@@ -1,5 +1,5 @@
-const prev = document.querySelector("#prev1");
-const next = document.querySelector("#next1");
+const prev = document.querySelector(".prev1");
+const next = document.querySelector(".next1");
 
 let carouselVp = document.querySelector("#carousel-vp");
 
@@ -32,11 +32,11 @@ next.addEventListener("click", () => {
   if (carouselInnerWidth - Math.abs(leftValue) > carouselVpWidth) {
     leftValue -= totalMovementSize;
     cCarouselInner.style.left = leftValue + "px";
-  } else {
+  } //else {
     // Se chegou ao final, reinicia para o começo
-    leftValue = 0;
-    cCarouselInner.style.left = leftValue + "px";
-  }
+   // leftValue = 0;
+    //cCarouselInner.style.left = leftValue + "px";
+  //}
 });
 
 const mediaQuery510 = window.matchMedia("(max-width: 510px)");
