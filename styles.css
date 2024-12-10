@@ -20,6 +20,7 @@
 
 *{
 margin: 0;
+overflow-x: hidden;
 }
 
 
@@ -1836,6 +1837,12 @@ padding-top: 1%;
     overflow-x: hidden;
     margin: 0;
   }
+  
+  #section{
+    overflow-x: hidden;
+    margin: 0;
+  }
+
 
   #menu-toggle {
     display:flex;
