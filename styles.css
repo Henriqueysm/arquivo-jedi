@@ -1837,9 +1837,9 @@ padding-top: 1%;
     margin: 0;
   }
 
-  section{
-    margin: 0%;
-    overflow: hidden;
+  #curiosidades, #saga, #franquia2, #franquia3, #franquia4, #cronologia, #personagens, #quizSectionPersonagem, #sabres, #quizSectionSabre, #simbolos, #contato{
+    width: 100%;
+    overflow-x: hidden;
   }
 
   #menu-toggle {
