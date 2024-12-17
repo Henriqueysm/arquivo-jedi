@@ -2270,7 +2270,7 @@ td {
   .card__description {
     font-size: 8px; /* Aumenta o tamanho da descrição */
   }
-}
+
 
 
   /* Para telas intermediárias, como tablets */
@@ -2398,7 +2398,5 @@ padding: 10%;
     align-items: flex-start;
     margin-left: 0%;
     }
-
-    
 
 }
