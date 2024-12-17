@@ -2162,41 +2162,133 @@ h4{
   display: none;
 }
 
-#personagens{
-  width: 100%;
-  margin: -7%;
-  overflow-x: hidden;
-  max-width: 100%;
+
+
+
+  
+
+#personagens {
+  text-align: center;
+  overflow-x: auto;  /* Permite scroll horizontal */
 }
 
+/* Estilos da tabela */
 table {
+  width: 100%;
   border-collapse: collapse;
-  }
+  padding: 0;
+  margin: 0;
+  font-size: 12px;  /* Reduz o tamanho da fonte em telas pequenas */
 
-  td {
-    padding: 1px; 
-    vertical-align: top;  
-    
-  }
-
-
-
-#personagens .cards-container {
-   grid-template-columns: repeat(5, 1fr); /* 5 colunas por linha */
 }
 
-.botao-quizz1{
-padding: 10%;
+td {
+  padding: 8px;
+  vertical-align: top;
+  word-wrap: break-word; /* Garante que o texto muito longo quebre e não cause overflow */
+  padding: 4px; /* Reduz o padding para melhor visualização em telas pequenas */
+
+}
+
+* Cards Container */
+#personagens .cards-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 colunas por padrão */
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
 }
 
 /* Estilos do cartão */
 .card {
+  perspective: 1000px;
   position: relative;
-  width: 78px; /* Adapta à largura do grid */
-  max-width: 200px; /* Limita a largura máxima */
+  width: 100%; /* Adapta à largura do grid */
+  max-width: 100%;
   margin: 0 auto; /* Centraliza o cartão */
+  height: 200px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  border-radius: 10px;
 }
 
+/* Estilo do lado da frente e de trás */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Estilo do lado da frente */
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Estilos para o lado de trás */
+.card-back {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+  color: #fff;
+  transform: rotateY(180deg);
+  border-radius: 10px;
+}
+
+.card__title {
+  padding: 15px 0px 0;
+  font-size: 8px;
+}
+
+.card__description {
+  padding: 15px 10px 0;
+  font-size: 9px;
+}
+
+  /* Reduz a quantidade de colunas para uma por linha */
+  #personagens .cards-container {
+    grid-template-columns: 1fr; /* Apenas uma coluna por linha */
+    gap: 5px; /* Menor espaçamento entre os cards */
+  }
+
+  .card {
+    width: 100%; /* Ocupa 100% da largura disponível */
+    height: 250px; /* Ajusta a altura dos cards */
+  }
+
+  .card__title {
+    font-size: 10px; /* Aumenta um pouco o tamanho da fonte do título */
+  }
+
+  .card__description {
+    font-size: 8px; /* Aumenta o tamanho da descrição */
+  }
+}
+
+
+  /* Para telas intermediárias, como tablets */
+  #personagens .cards-container {
+    grid-template-columns: repeat(1, 1fr); /* 2 colunas por linha */
+  }
+
+  .card {
+    width: 90%; /* Ajusta a largura para melhor uso do espaço */
+    height: 220px;
+  }
+
+
+  
+
+.botao-quizz1{
+padding: 10%;
+}
 
 #sabres{
   height: 70vh;
