@@ -1113,6 +1113,10 @@ text-align: center;
 margin: 0% auto;
 }
 
+.answer:hover{
+  background-color: #ccc;
+  color: #000;
+}
 
 .selected { /* cor de quando está selecionado */
 padding: 5px;
@@ -1122,8 +1126,6 @@ background-color: #ccc;
 border-color: #252524;
 color: #000;
 margin: 0% auto;
-
-
 }
 
 
@@ -1246,7 +1248,7 @@ opacity: 1;
 transition: opacity 0.3s ease;
 }
 
-.azul { background-color: #00f; }
+.azul {background-color: #00f; }
 .sabre:hover .azul {box-shadow: 0 0 20px 10px rgba(0, 0, 253, 0.418); }
 
 .verde { background-color: #0f0; }
@@ -1274,8 +1276,34 @@ transition: opacity 0.3s ease;
 color:gold;
 }
 
+.sabre-azul {color: #00f; }
+
+.sabre-verde { color: #0f0; }
+
+.sabre-vermelho { color: #ff0000;
+line-height: 25px; }
+
+.sabre-amarelo { color: yellow; }
+
+.sabre-roxo { color: purple; }
+
+.sabre-preto { color: #474747; }
+
+.sabre-laranja { color: rgb(252, 80, 17); }
+
+.sabre-branco { color: white; }
 
 
+
+
+div .sabre-mobile{
+  color: white;
+}
+
+
+.txt-sabre-mobile{
+  display: none;
+}
 
 
 /* SIMBOLOS */
@@ -1805,6 +1833,11 @@ vertical-align: top;
 
 }
 
+
+.txt-sabre-mobile{
+  display: none;
+}
+
 .tooltip {
   padding: 5px;
 }
@@ -1851,6 +1884,10 @@ body{
 
   #menu-toggle {
     display:flex;
+  }
+
+  .botao-saga{
+    display: none;
   }
 
   .botão-toggle{
@@ -2310,6 +2347,13 @@ padding: 10%;
   font-size: 14px; /* Reduz o tamanho da fonte */
   z-index: 1000; /* Garante que apareça acima de outros elementos */
   height: 10vh;
+}
+
+
+.txt-sabre-mobile{
+  display:block;
+  padding: 10%;
+
 }
 
 
