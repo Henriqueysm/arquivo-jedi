@@ -1835,7 +1835,11 @@ padding-top: 1%;
   margin: 0 0;
 }
 
-
+header .intro .curiosidades .saga .secao4 .franquia2 .cronologia .personagens .botao-quizz1 .quizSectionPersonagem .sabres .botao-quizz2 .quizSectionSabre .simbolos .contato{
+  width: 100%;
+  overflow: hidden;
+margin: 0;
+}
 
   main, #section{
     width: 100%;
