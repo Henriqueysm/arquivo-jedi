@@ -2353,50 +2353,27 @@ padding: 10%;
 
 
     #contato {
-      background-image: url(Wallpapper/2.png); 
-      padding: 20px;
-      text-align: center;
-      height: 70vh;
-      width: 100%;
-      overflow-x: hidden;
-      }
-    
-    h2 {
-    margin-bottom: 30px;
+      height: auto;  /* Permite que a altura se ajuste automaticamente em telas menores */
+      padding: 10px;  /* Reduz o padding para melhor aproveitamento da tela */
     }
-    
-    div .redes {
-    display: none;
-    }
-
-    .contato {
-      width: 100%;
-      max-width: 100%;
-      display: flex;             /* Ativa Flexbox */
-      flex-direction: column;    /* Coloca os elementos em coluna */
-      justify-content: center;   /* Centraliza verticalmente */
-      align-items: center;       /* Centraliza horizontalmente */
-      height: 110vh;             /* Altura total da tela */
-      text-align: center;        /* Centraliza o texto */
-      margin: 0;
-  }
   
-  /* Espaço entre título e carrossel */
-  .contato h2 {
-      margin-bottom: 20px;       /* Adiciona espaçamento entre o título e o carrossel */
-      line-height: 100px;
+    .contato {
+      height: auto;  /* Ajusta a altura para não ser maior que a tela */
+      padding: 15px;
+      margin: 0;
     }
-
-
-
-    
-    /* Estilo para as Redes Sociais */
+  
+    /* Centraliza o título e diminui o tamanho da fonte */
+    .contato h2 {
+      margin-bottom: 15px;
+      font-size: 1.5rem; /* Reduz o tamanho da fonte */
+      line-height: 1.4;
+    }
+  
+    /* Ajusta o estilo das redes sociais */
     .redes {
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-    align-items: flex-start;
-    margin-left: 0%;
+      align-items: center; /* Centraliza as redes sociais */
+      gap: 15px;  /* Espaço entre os itens */
+      margin-left: 0;
     }
-
-}
+  }
