@@ -2166,6 +2166,7 @@ h4{
   width: 100%;
   margin: -7%;
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 table {
@@ -2280,6 +2281,8 @@ padding: 10%;
     }
 
     .contato {
+      width: 100%;
+      max-width: 100%;
       display: flex;             /* Ativa Flexbox */
       flex-direction: column;    /* Coloca os elementos em coluna */
       justify-content: center;   /* Centraliza verticalmente */
