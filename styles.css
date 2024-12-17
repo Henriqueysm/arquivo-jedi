@@ -1835,10 +1835,10 @@ padding-top: 1%;
   margin: 0 0;
 }
 
-header .intro .curiosidades .saga .secao4 .franquia2 .cronologia .personagens .botao-quizz1 .quizSectionPersonagem .sabres .botao-quizz2 .quizSectionSabre .simbolos .contato{
+body{
   width: 100%;
-  overflow: hidden;
-margin: 0;
+  margin: 0;
+  overflow-x: hidden;
 }
 
   main, #section{
@@ -1891,7 +1891,8 @@ display: none;
   }
 
   #curiosidades{
-    overflow-x: hidden;
+    overflow: hidden;
+    height: 90vh;
 
   }
 
@@ -1928,7 +1929,7 @@ display: none;
   
   #saga {
     margin: 0;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     text-align: left;
@@ -1972,7 +1973,7 @@ display: none;
 
 
   #franquia2 {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     text-align: left;
@@ -2016,7 +2017,7 @@ display: none;
 
 
   #franquia3 {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     text-align: left;
@@ -2047,7 +2048,7 @@ display: none;
 
 
   #franquia4 {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     text-align: left;
@@ -2078,30 +2079,55 @@ display: none;
 
 
   .cronologia {
-    line-height: 5px;
-    background-color: #1c1c1c; /* Fundo escuro */
-    color: #ffffff; /* Texto branco */
-    text-align: center;
-    height: 125vh;
-    width: 100%;
-    }
+    display: flex;             /* Ativa Flexbox */
+    flex-direction: column;    /* Coloca os elementos em coluna */
+    justify-content: center;   /* Centraliza verticalmente */
+    align-items: center;       /* Centraliza horizontalmente */
+    height: 110vh;             /* Altura total da tela */
+    text-align: center;        /* Centraliza o texto */
+    margin: 0;
+}
 
-    .cronologia h2 {
-    line-height: 45px;
-      }
-
-
-  .cCarousel{
-    max-width: 80px;
-    margin: 0 0; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-    
+/* Espaço entre título e carrossel */
+.cronologia h2 {
+    margin-bottom: 20px;       /* Adiciona espaçamento entre o título e o carrossel */
+    line-height: 35px;
   }
 
+/* Estilização do carrossel */
+#cCarousel {
+    display: flex;
+    position: relative;
+    justify-content: center;   /* Centraliza os itens */
+    align-items: center;
+    width: 120%;                /* Define a largura */
+    max-width: 1200px;
+}
+
+
+   
+#cCarousel-inner {
+  display: flex;
+  gap: 0px;                 /* Espaçamento entre os itens */
+  overflow: hidden;          /* Oculta itens fora da área do carrossel */
+}
+
+.cCarousel-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;       /* Bordas arredondadas */
+ overflow: hidden;         /* Oculta itens fora do carrossel */
+  }
+  
+  .cCarousel-item img {
+      max-width: 100%;          /* Imagens responsivas */
+      height: auto;             /* Mantém proporções */
+      border-radius: 10px;      /* Arredondamento opcional */
+  }
+
+  
   #cCarousel {
-    max-width: 260px;
+    width: 63%;
     justify-content: center; 
     align-items: center;
     margin: 0;
@@ -2114,24 +2140,27 @@ display: none;
       background-color: rgba(0, 0, 0, 0.418);
       color: #fff;
       border: none;
-      font-size: 1em;
+      font-size: 3em;
       cursor: pointer;
       border-radius: 0%;
       z-index: 10;
       top: 50%;
 }
 .prev1{
-  left: 0%;
+  left: -10%;
 }
 
 .next1{
-  left: 125%;
+  left: 100%;
 }
 
 h4{
   line-height: 15px;
 }
 
+.fontecronolog{
+  display: none;
+}
 
 #personagens{
   width: 100%;
@@ -2246,13 +2275,26 @@ padding: 10%;
     margin-bottom: 30px;
     }
     
-    .contato-conteudo {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 5px;
-    padding-bottom: 10%;
+    div .redes {
+    display: none;
     }
+
+    .contato {
+      display: flex;             /* Ativa Flexbox */
+      flex-direction: column;    /* Coloca os elementos em coluna */
+      justify-content: center;   /* Centraliza verticalmente */
+      align-items: center;       /* Centraliza horizontalmente */
+      height: 110vh;             /* Altura total da tela */
+      text-align: center;        /* Centraliza o texto */
+      margin: 0;
+  }
+  
+  /* Espaço entre título e carrossel */
+  .contato h2 {
+      margin-bottom: 20px;       /* Adiciona espaçamento entre o título e o carrossel */
+      line-height: 100px;
+    }
+
 
 
     
